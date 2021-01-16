@@ -1,5 +1,7 @@
-# ReadMe Generator
-  ![Image of license](https://img.shields.io/badge/License-MIT-blue)
+// function to generate markdown for README
+function generateMarkdown(data) {
+  return `# ${data.projectTitle}
+  ![Image of license](https://img.shields.io/badge/License-${data.license}-blue)
   # Table of Contents
   *[Description](#description)
   
@@ -13,21 +15,25 @@
 
 
   # Description 
-   This is a ReadMe Generator. Using Javascript and the Terminal, you can enter data here in the terminal and have it appear in a markdown file that this code generates. 
+  ${data.proDescribe}
 
   # Installation Instructions
-  There are none
+  ${data.installInstruct}
 
   # Contribution Guidelines
-  N/A
+  ${data.conGuide}
 
   # Testing Information
-  N/A
+  ${data.tests}
 
   # Contact Information
-  Github:AlmostALantern
+  Github:${data.githubName}
  
-  Email:Jackccinc@gmail
+  Email:${data.emailAddress}
 
 
 
+`;
+}
+
+module.exports = generateMarkdown;
